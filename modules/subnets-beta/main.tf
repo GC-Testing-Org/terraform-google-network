@@ -67,4 +67,8 @@ resource "google_compute_subnetwork" "subnetwork" {
   ipv6_access_type = lookup(each.value, "ipv6_access_type", null)
 
   depends_on = [var.module_depends_on]
+  log_config {
+    metadata      = "INCLUDE_ALL_METADATA"
+    flow_sampling = "1"
+  }
 }
