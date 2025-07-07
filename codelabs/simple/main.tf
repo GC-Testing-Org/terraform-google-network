@@ -87,7 +87,8 @@ resource "google_compute_instance" "default" {
   }
 
   # Apply the firewall rule to allow external IPs to ping this instance
-  tags = ["allow-ping"]
+  tags           = ["allow-ping"]
+  can_ip_forward = false
 }
 
 # Allow traffic to the VM
