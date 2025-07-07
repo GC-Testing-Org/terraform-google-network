@@ -65,4 +65,8 @@ resource "google_compute_subnetwork" "subnetwork" {
   role             = lookup(each.value, "role", null)
   stack_type       = lookup(each.value, "stack_type", null)
   ipv6_access_type = lookup(each.value, "ipv6_access_type", null)
+  log_config {
+    metadata      = "INCLUDE_ALL_METADATA"
+    flow_sampling = "1"
+  }
 }
