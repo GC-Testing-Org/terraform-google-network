@@ -229,7 +229,7 @@ resource "google_compute_instance" "router_appliance_1" {
   name           = "fake-router-appliance-1"
   machine_type   = "e2-medium"
   project        = var.project_id
-  can_ip_forward = true
+  can_ip_forward = false
   zone           = random_shuffle.zone.result[0]
 
   boot_disk {
